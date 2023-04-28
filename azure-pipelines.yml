@@ -9,6 +9,7 @@ trigger:
 pool:
   vmImage: 'BB 1'
 
+steps:
 - task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
