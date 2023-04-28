@@ -9,7 +9,7 @@ trigger:
 pool:
   vmImage: 'BB 1'
 
-- task: Maven@4
+task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
     publishJUnitResults: true
@@ -20,7 +20,8 @@ pool:
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
-    
+    goals: 'package'
+
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
