@@ -9,7 +9,7 @@ trigger:
 pool:
   vmImage: 'BB 1'
 
-task: Maven@4
+- task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
     publishJUnitResults: true
