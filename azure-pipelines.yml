@@ -1,5 +1,15 @@
 # Starter pipeline
-task: Maven@4
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: 'BB 1'
+
+- task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
     publishJUnitResults: true
@@ -10,16 +20,7 @@ task: Maven@4
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
-trigger:
-- main
-
-pool:
-  vmImage: 'windows-latest'
-
+    
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
